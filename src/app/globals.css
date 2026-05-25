@@ -1,26 +1,171 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@theme {
+  --color-primary-50: var(--primary-50);
+  --color-primary-100: var(--primary-100);
+  --color-primary-500: var(--primary-500);
+  --color-primary-600: var(--primary-600);
+  --color-primary-900: var(--primary-900);
+  
+  --color-accent-500: var(--accent-500);
+  --color-accent-600: var(--accent-600);
+  
+  --color-card-bg: var(--card-bg);
+  --color-card-border: var(--card-border);
+  --color-glow-color: var(--glow-color);
+  
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
+  
+  --animate-marquee: marquee 35s linear infinite;
+  --animate-pulse-slow: pulse-slow 6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  
+  @keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+  }
+  @keyframes pulse-slow {
+    0%, 100% { opacity: 0.2; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(1.05); }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+:root {
+  /* Modo Claro - Slate Elegante */
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  
+  --primary-50: #f5f3ff;
+  --primary-100: #ede9fe;
+  --primary-500: #6366f1;
+  --primary-600: #4f46e5;
+  --primary-900: #312e81;
+  
+  --accent-500: #06b6d4;
+  --accent-600: #0891b2;
+  
+  --card-bg: rgba(255, 255, 255, 0.7);
+  --card-border: rgba(15, 23, 42, 0.08);
+  --glow-color: rgba(99, 102, 241, 0.15);
+  
+  --grid-color: rgba(15, 23, 42, 0.04);
 }
+
+.dark {
+  /* Modo Oscuro - Space/Futurista Profundo */
+  --background: #030712; /* Slate ultra profundo */
+  --foreground: #f8fafc;
+  
+  --primary-50: #0f172a;
+  --primary-100: #1e1b4b;
+  --primary-500: #818cf8;
+  --primary-600: #6366f1;
+  --primary-900: #c084fc;
+  
+  --accent-500: #22d3ee;
+  --accent-600: #06b6d4;
+  
+  --card-bg: rgba(9, 13, 26, 0.6);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --glow-color: rgba(129, 140, 248, 0.15);
+  
+  --grid-color: rgba(255, 255, 255, 0.02);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1), color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-x: hidden;
+}
+
+/* Fondo con rejilla tecnológica sutil */
+.tech-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+}
+
+/* Efecto Glassmorphism */
+.glass {
+  background-color: var(--card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--card-border);
+}
+
+.glass-navbar {
+  background-color: rgba(var(--background-rgb, 248, 250, 252), 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--card-border);
+}
+
+.dark .glass-navbar {
+  background-color: rgba(3, 7, 18, 0.75);
+}
+
+/* Brillo Radial Interactivo (Spotlight) */
+.spotlight-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    600px circle at var(--mouse-x, 0px) var(--mouse-y, 0px),
+    var(--glow-color),
+    transparent 40%
+  );
+  z-index: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Gradientes de Texto Premium */
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(135deg, var(--primary-600), var(--accent-500));
+}
+
+.dark .text-gradient {
+  background-image: linear-gradient(135deg, #a78bfa, #22d3ee);
+}
+
+/* Scrollbar Personalizado */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--card-border);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-500);
+}
+
+/* Ocultar scrollbar de marquee horizontal */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Animaciones sutiles adicionales */
+.animate-glow {
+  box-shadow: 0 0 40px -10px var(--primary-500);
+}
+

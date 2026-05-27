@@ -156,7 +156,9 @@ export default function Contact() {
 
                  {/* Teléfono y WhatsApp */}
                 <a
-                  href="tel:+542645890535"
+                  href="https://wa.me/5492645890535"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center gap-3.5 p-3.5 rounded-2xl bg-card-bg/40 border border-card-border/60 hover:border-primary-500/30 hover:bg-primary-500/3 transition-all duration-300 group cursor-pointer"
                 >
                   <span className="w-9 h-9 rounded-xl bg-primary-500/10 flex items-center justify-center text-primary-500 group-hover:scale-105 transition-transform">

@@ -24,6 +24,13 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Github: GithubIcon,
 };
 
+const getHoverBorderColor = (tech: Technology) => {
+  if (tech.name === "Next.js" || tech.name === "GitHub") {
+    return "var(--primary-500)";
+  }
+  return tech.glowClass.replace(/0\.\d+\)$/, "0.45)");
+};
+
 const categories = ["Todos", "Frontend", "Backend", "Base de datos", "Lenguajes", "Herramientas"];
 
 export default function TechStack() {
@@ -99,6 +106,7 @@ export default function TechStack() {
                   y: -5,
                   scale: 1.02,
                   boxShadow: `0 10px 25px -5px ${tech.glowClass}`,
+                  borderColor: getHoverBorderColor(tech),
                 }}
                 className="group relative p-5 rounded-2xl glass border border-card-border/75 flex flex-col items-center justify-center gap-3 text-center transition-all duration-300 cursor-default"
               >

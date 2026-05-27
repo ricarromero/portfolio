@@ -77,7 +77,7 @@ export const technologies: Technology[] = [
 
   // Base de datos
   {
-    name: "SQL Básico",
+    name: "PostgreSQL",
     category: "Base de datos",
     iconName: "Database",
     color: "group-hover:text-cyan-500",

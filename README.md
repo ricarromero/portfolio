@@ -2,7 +2,7 @@
 
 Este es el repositorio de mi portfolio web personal. Ha sido diseñado con una estética moderna e interactiva inspirada en plataformas SaaS premium y dashboards de tecnología futuristas, y optimizado específicamente para lograr el máximo rendimiento y fluidez.
 
-Como **estudiante de Ciencias de la Computación** y **programador junior**, mi enfoque principal es diseñar y construir sistemas reales, robustos y eficientes que resuelvan problemas y automaticen procesos de negocios.
+Como **estudiante de Ciencias de la Computación** y **Junior Software Developer**, mi enfoque principal es diseñar y construir sistemas reales, robustos y eficientes que resuelvan problemas y automaticen procesos de negocios.
 
 ---
 

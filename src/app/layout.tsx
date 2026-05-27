@@ -16,11 +16,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Ricardo Romero | Programador Junior",
+  title: "Ricardo Romero | Junior Software Developer",
   description: "Portfolio personal de Ricardo Romero, estudiante de Ciencias de la Computación de la Universidad Nacional de San Juan. Especializado en Next.js, React, TypeScript y automatizaciones de sistemas empresariales.",
   keywords: [
     "Ricardo Romero",
-    "Programador Junior",
+    "Junior Software Developer",
     "Next.js",
     "React",
     "TypeScript",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Ricardo Romero" }],
   creator: "Ricardo Romero",
   openGraph: {
-    title: "Ricardo Romero | Programador Junior",
+    title: "Ricardo Romero | Junior Software Developer",
     description: "Sistemas web a medida, automatización e inteligencia aplicada a problemáticas reales.",
     url: "https://github.com/ricarromero",
     siteName: "Ricardo Romero Portfolio",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ricardo Romero | Programador Junior",
+    title: "Ricardo Romero | Junior Software Developer",
     description: "Sistemas web a medida y automatizaciones eficientes.",
   },
 };

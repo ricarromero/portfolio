@@ -134,7 +134,7 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-2xl md:text-3xl font-bold mb-4 flex flex-wrap items-center gap-x-2"
           >
-            <span className="text-foreground/90 font-medium">Programador Junior |</span>
+            <span className="text-foreground/90 font-medium">Junior Software Developer |</span>
             <div className="inline-flex overflow-hidden h-[40px] items-center relative min-w-[240px]">
               <AnimatePresence mode="wait">
                 <motion.span

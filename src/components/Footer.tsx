@@ -18,7 +18,7 @@ export default function Footer() {
         <div className="text-center md:text-left flex flex-col">
           <span className="text-sm font-bold tracking-tight text-foreground/90">Ricardo Octavio Romero</span>
           <span className="text-[10px] uppercase font-bold text-foreground/45 mt-1 block tracking-wider">
-            Programador Junior
+            Junior Software Developer
           </span>
         </div>
 

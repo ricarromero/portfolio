@@ -242,7 +242,7 @@ export default function Contact() {
                         className={`w-full px-4 py-3 rounded-xl bg-card-bg/50 border text-xs font-medium text-foreground focus:outline-none focus:ring-2 focus:ring-primary-500/25 transition-all ${
                           errors.name ? "border-red-500" : "border-card-border hover:border-primary-500/30"
                         }`}
-                        placeholder="Ricardo Romero"
+                        placeholder="ej. Juan Pérez"
                       />
                       {errors.name && (
                         <span className="text-[10px] text-red-500 font-bold flex items-center gap-1 mt-0.5">
@@ -266,7 +266,7 @@ export default function Contact() {
                         className={`w-full px-4 py-3 rounded-xl bg-card-bg/50 border text-xs font-medium text-foreground focus:outline-none focus:ring-2 focus:ring-primary-500/25 transition-all ${
                           errors.email ? "border-red-500" : "border-card-border hover:border-primary-500/30"
                         }`}
-                        placeholder="tu@correo.com"
+                        placeholder="ejemplo@correo.com"
                       />
                       {errors.email && (
                         <span className="text-[10px] text-red-500 font-bold flex items-center gap-1 mt-0.5">

@@ -65,7 +65,7 @@ export const projects: Project[] = [
     category: "HTML",
     status: "Completado",
     repoUrl: "https://github.com/ricarromero/Legal_PDF_Compressor_y_OCR",
-    demoUrl: "placeholder",
+    demoUrl: "https://doclex.vercel.app/",
     colorTheme: {
       primary: "from-blue-500 to-indigo-600",
       glow: "rgba(59, 130, 246, 0.15)",
@@ -117,7 +117,7 @@ export const projects: Project[] = [
     category: "Automatización",
     status: "MVP Listo",
     repoUrl: "https://github.com/ricarromero/chatbot-turnos-whatsapp-case-study",
-    demoUrl: "placeholder",
+    demoUrl: "https://bot-estudio-juridico.vercel.app/",
     colorTheme: {
       primary: "from-violet-500 to-purple-600",
       glow: "rgba(139, 92, 246, 0.15)",

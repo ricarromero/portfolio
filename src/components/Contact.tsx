@@ -40,18 +40,50 @@ export default function Contact() {
     return Object.keys(tempErrors).length === 0;
   };
 
-  // Envío simulado interactivo
-  const handleSubmit = (e: React.FormEvent) => {
+  // Envío real utilizando Web3Forms
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validateForm()) return;
 
     setStatus("sending");
 
-    // Simular retraso de red
-    setTimeout(() => {
-      setStatus("success");
-      setFormData({ name: "", email: "", subject: "", message: "" });
-    }, 1800);
+    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+    if (!accessKey) {
+      console.error("Falta la clave NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY en las variables de entorno.");
+      setStatus("error");
+      return;
+    }
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: accessKey,
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          from_name: "Portafolio - Ricardo Romero",
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setStatus("success");
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        console.error("Error al enviar el formulario:", data.message || data);
+        setStatus("error");
+      }
+    } catch (error) {
+      console.error("Error de red al enviar el formulario:", error);
+      setStatus("error");
+    }
   };
 
   return (
@@ -310,6 +342,13 @@ export default function Contact() {
                       </>
                     )}
                   </button>
+
+                  {status === "error" && (
+                    <div className="flex items-center gap-2.5 p-3.5 rounded-xl bg-red-500/10 border border-red-500/20 text-red-500 text-xs font-bold mt-3 animate-pulse-slow">
+                      <AlertCircle className="w-4.5 h-4.5 flex-shrink-0" />
+                      <span>Hubo un problema al enviar el mensaje. Por favor, intentá de nuevo o escribime por email directo.</span>
+                    </div>
+                  )}
                 </motion.form>
               ) : (
                 /* Estado Exitoso Animado */

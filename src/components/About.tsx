@@ -91,11 +91,11 @@ export default function About() {
               </h3>
               
               <p className="text-sm md:text-base text-foreground/70 leading-relaxed mb-6 font-medium">
-                Soy estudiante avanzado de la **Licenciatura en Ciencias de la Computación (4.º año) en la Universidad Nacional de San Juan**. Me apasiona conectar los fundamentos algorítmicos teóricos y las buenas prácticas de ingeniería de software con la creación de sistemas rápidos, eficientes y verdaderamente útiles.
+                Soy estudiante avanzado de la <strong className="font-bold text-foreground/90">Licenciatura en Ciencias de la Computación (4.º año) en la Universidad Nacional de San Juan</strong>. Me apasiona conectar los fundamentos algorítmicos teóricos y las buenas prácticas de ingeniería de software con la creación de sistemas rápidos, eficientes y verdaderamente útiles.
               </p>
               
               <p className="text-sm md:text-base text-foreground/70 leading-relaxed font-medium">
-                Actualmente me dedico a diseñar y programar aplicaciones web y automatizaciones a medida utilizando tecnologías robustas como **Python, HTML, CSS** and **TypeScript**. He desarrollado proyectos innovadores para **control de asistencia por códigos QR dinámicos**, **compresión local de PDF y procesamiento OCR inteligente**, **monitoreo de incidentes industriales** y **automatización conversacional por WhatsApp** para turnos.
+                Actualmente me dedico a diseñar y programar aplicaciones web y automatizaciones a medida utilizando tecnologías robustas como <strong className="font-bold text-foreground/90">Python, HTML, CSS</strong> y <strong className="font-bold text-foreground/90">TypeScript</strong>. He desarrollado proyectos innovadores para <strong className="font-bold text-foreground/90">control de asistencia por códigos QR dinámicos</strong>, <strong className="font-bold text-foreground/90">compresión local de PDF y procesamiento OCR inteligente</strong>, <strong className="font-bold text-foreground/90">monitoreo de incidentes industriales</strong> y <strong className="font-bold text-foreground/90">automatización conversacional por WhatsApp</strong> para turnos.
               </p>
             </div>
 

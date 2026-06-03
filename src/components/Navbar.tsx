@@ -71,7 +71,9 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
-        scrolled
+        isOpen
+          ? "py-3 bg-background border-b border-card-border"
+          : scrolled
           ? "py-3 glass-navbar shadow-lg shadow-black/5 dark:shadow-black/20"
           : "py-5 bg-transparent border-b border-transparent"
       }`}
@@ -148,7 +150,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 top-[65px] z-30 md:hidden bg-background/95 backdrop-blur-lg flex flex-col p-6 border-t border-card-border"
+            className="fixed inset-0 top-[65px] z-30 md:hidden bg-background flex flex-col p-6"
           >
             <nav className="flex flex-col gap-4 mt-6">
               {navLinks.map((link, index) => {

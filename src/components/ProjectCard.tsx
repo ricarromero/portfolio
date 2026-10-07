@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ExternalLink, ArrowRight, ShieldAlert, FileSearch, QrCode, MessageSquare, ClipboardList } from "lucide-react";
+import { ExternalLink, ArrowRight, ShieldAlert, FileSearch, QrCode, MessageSquare, ClipboardList, Trophy } from "lucide-react";
 import { Project } from "../data/projects";
 import { GithubIcon } from "./BrandIcons";
 
@@ -12,11 +12,12 @@ interface ProjectCardProps {
 
 // Mapear los iconos representativos de los proyectos
 const projectIconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  "minesafe-tracker": ShieldAlert,
-  "legal-pdf-compressor": FileSearch,
-  "qr-ingress-control": QrCode,
-  "whatsapp-appointment-bot": MessageSquare,
+  "liga-universitaria": Trophy,
   "order-management-system": ClipboardList,
+  "whatsapp-appointment-bot": MessageSquare,
+  "incident-safe-tracker": ShieldAlert,
+  "qr-ingress-control": QrCode,
+  "smart-pdf-compressor": FileSearch,
 };
 
 export default function ProjectCard({ project, onOpenDetails }: ProjectCardProps) {

@@ -17,8 +17,11 @@ export default function Footer() {
         {/* Info */}
         <div className="text-center md:text-left flex flex-col">
           <span className="text-sm font-bold tracking-tight text-foreground/90">Ricardo Octavio Romero</span>
-          <span className="text-[10px] uppercase font-bold text-foreground/45 mt-1 block tracking-wider">
-            Junior Software Developer
+          <span className="text-[11px] font-medium text-foreground/60 mt-0.5 block">
+            Estudiante avanzado de Ciencias de la Computación · UNSJ
+          </span>
+          <span className="text-[10px] uppercase font-bold text-primary-500 tracking-wider mt-0.5 block">
+            Sistemas · Datos · Automatización
           </span>
         </div>
 

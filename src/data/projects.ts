@@ -8,8 +8,8 @@ export interface Project {
   features: string[];
   stack: string[];
   enfoque: string;
-  category: 'Python' | 'HTML' | 'CSS' | 'Automatización' | 'Gestión' | 'Frontend' | 'Todos';
-  status: 'Completado' | 'En Desarrollo' | 'MVP Listo';
+  category: 'Sistemas' | 'Datos' | 'Automatización' | 'Gestión' | 'Todos';
+  status: 'Completado' | 'En desarrollo' | 'MVP Listo';
   repoUrl: string;
   demoUrl: string;
   colorTheme: {
@@ -22,98 +22,72 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: "incident-safe-tracker",
-    name: "Incident Safe Tracker",
-    description: "Sistema web para registrar, gestionar, auditar y hacer seguimiento de incidentes dentro de operaciones industriales de alta complejidad.",
-    longDescription: "Incident Safe Tracker es una plataforma web robusta diseñada para la industria y la logística compleja. Facilita la declaración de incidentes, la asignación de planes de acción correctiva en tiempo real y la visualización de analíticas automáticas con soporte en Python.",
-    problem: "Las operaciones industriales complejas enfrentan dificultades para reportar incidentes debido al aislamiento, sistemas en papel obsoletos y la falta de seguimiento oportuno a las acciones correctivas, lo que aumenta los riesgos operativos.",
-    solution: "Una aplicación web interactiva que centraliza los reportes, permite la carga de evidencia offline (con sincronización posterior) y genera reportes analíticos automatizados, mejorando el tiempo de respuesta en un 70%.",
+    id: "liga-universitaria",
+    name: "Liga Universitaria — Sistema de gestión deportiva",
+    description: "Desarrollo de un MVP orientado a centralizar la gestión de una liga universitaria, incluyendo equipos, partidos, resultados, sanciones, documentación y estadísticas.",
+    longDescription: "Sistema de gestión integral orientado a la administración de torneos deportivos universitarios. Centraliza la carga y consulta de fixture, resultados, tablas de posiciones, registro de sanciones disciplinarias, documentación de jugadores y computación automática de estadísticas en una plataforma unificada.",
+    problem: "Dificultad y desorganización al gestionar manualmente calendarios de partidos, registros de jugadores, sanciones y estadísticas en planillas separadas.",
+    solution: "Un sistema web centralizado con base de datos relacional y panel de administración que automatiza la actualización de tablas de posiciones, control de sanciones y registro de partidos.",
     features: [
-      "Registro inmediato de incidentes con categorización de riesgo (Bajo, Medio, Alto, Crítico).",
-      "Asignación automática de planes de acción correctiva a responsables específicos.",
-      "Panel de analíticas visuales interactivo con gráficos (Recharts) para auditar tendencias de incidentes.",
-      "Análisis predictivo de patrones de riesgo implementado mediante un script en Python en el backend."
+      "Gestión centralizada de equipos, planteles y documentación de jugadores.",
+      "Generación y seguimiento de fixture de partidos y resultados en tiempo real.",
+      "Registro de sanciones disciplinarias con control automático de elegibilidad.",
+      "Tablas de posiciones y estadísticas automatizadas."
     ],
-    stack: ["Python", "Next.js", "React", "TypeScript", "Tailwind CSS", "Supabase", "Recharts"],
-    enfoque: "Seguridad operacional, reportes y auditoría, automatización en Python.",
-    category: "Python",
-    status: "MVP Listo",
-    repoUrl: "https://github.com/ricarromero/minesafe-tracker-case-study",
+    stack: ["Next.js", "React", "TypeScript", "SQL", "Supabase", "APIs"],
+    enfoque: "Gestión de información, sistemas y datos.",
+    category: "Sistemas",
+    status: "En desarrollo",
+    repoUrl: "https://github.com/ricarromero",
     demoUrl: "placeholder",
     colorTheme: {
-      primary: "from-amber-500 to-orange-600",
-      glow: "rgba(245, 158, 11, 0.15)",
-      border: "hover:border-amber-500/50 dark:hover:border-amber-400/40",
-      bgGrad: "dark:from-amber-950/20 dark:to-slate-950"
-    }
-  },
-  {
-    id: "smart-pdf-compressor",
-    name: "Smart PDF Compressor & OCR",
-    description: "Desarrollo de una herramienta web de procesamiento masivo para optimizar, comprimir y procesar documentos digitalizados de gran tamaño.",
-    longDescription: "Una utilidad web del lado del cliente diseñada para flujos de trabajo corporativos y sistemas de administración. Permite reducir significativamente el peso de documentos escaneados aplicando un motor de OCR (Reconocimiento Óptico de Caracteres) local para buscar texto libre de servidores externos.",
-    problem: "Los portales de carga imponen límites estrictos de peso para la subida de archivos corporativos. Además, muchos expedientes son fotos o escaneos no legibles por computadora, lo que impide realizar búsquedas de palabras clave.",
-    solution: "Desarrollo de una solución web 100% local (del lado del cliente) que procesa los archivos en el navegador, garantizando confidencialidad absoluta al no enviar documentación corporativa confidencial a servidores externos.",
-    features: [
-      "Compresión de PDF ajustable mediante remuestreo de imágenes directamente en el navegador.",
-      "Motor de OCR local integrado con Tesseract.js para extraer y hacer seleccionable el texto de PDFs escaneados.",
-      "Procesamiento por lotes y descarga optimizada en un único archivo PDF consolidado.",
-      "Estructuración de contenido HTML semántico y layouts interactivos para una velocidad de renderizado óptima."
-    ],
-    stack: ["HTML", "CSS", "React", "Vite", "PDF.js", "jsPDF", "Tesseract.js"],
-    enfoque: "OCR local, procesamiento de documentos, compresión de PDF, optimización web.",
-    category: "HTML",
-    status: "Completado",
-    repoUrl: "https://github.com/ricarromero/Legal_PDF_Compressor_y_OCR",
-    demoUrl: "https://doclex.vercel.app/",
-    colorTheme: {
-      primary: "from-blue-500 to-indigo-600",
-      glow: "rgba(59, 130, 246, 0.15)",
+      primary: "from-blue-600 to-indigo-700",
+      glow: "rgba(37, 99, 235, 0.15)",
       border: "hover:border-blue-500/50 dark:hover:border-blue-400/40",
       bgGrad: "dark:from-blue-950/20 dark:to-slate-950"
     }
   },
   {
-    id: "qr-ingress-control",
-    name: "Control de Ingreso con QR",
-    description: "Aplicación web corporativa para el control de ingreso y egreso de personal mediante códigos QR dinámicos autorotativos y auditoría.",
-    longDescription: "Un sistema integral de control de asistencia y acceso físico para organizaciones. Combina una interfaz para colaboradores que genera credenciales QR temporales y dinámicas con un portal de administración y escáner en tiempo real.",
-    problem: "Las credenciales físicas tradicionales son costosas y los códigos QR estáticos son fáciles de duplicar o compartir, lo que debilita el control de seguridad de las empresas.",
-    solution: "Creación de un sistema con QR dinámico que expira cada 15 segundos y que requiere validación en tiempo real contra la base de datos de Supabase, evitando la suplantación de identidad.",
+    id: "order-management-system",
+    name: "Sistema de gestión para emprendimiento",
+    description: "Aplicación desarrollada para organizar pedidos, clientes y seguimiento de ventas de un emprendimiento real de productos personalizados.",
+    longDescription: "Sistema desarrollado a medida para optimizar el flujo operativo de Moon Regalos, un emprendimiento de productos personalizados. Permite estructurar la información de clientes, controlar el estado de fabricación de los pedidos y analizar métricas de ventas.",
+    problem: "El registro manual en cuadernos y hojas de cálculo generaba confusión en plazos de entrega y errores en las especificaciones de diseño personalizadas de los productos.",
+    solution: "Una aplicación web centralizada con base de datos relacional que organiza pedidos en un flujo de trabajo claro, permitiendo consultar el historial de clientes y evaluar métricas de ventas.",
     features: [
-      "Generación de código QR dinámico de un solo uso por usuario, sincronizado por tiempo.",
-      "Escáner web integrado de cámara para guardias o tótems de entrada con retroalimentación sonora.",
-      "Dashboard administrativo completo con panel de roles (Administrador, Guardia, Colaborador).",
-      "Auditoría automatizada de entradas, salidas, horas trabajadas e inasistencias con reportes CSV."
+      "Organización visual de pedidos por estado de producción y fecha de entrega.",
+      "Base de datos centralizada de clientes con historial de compras y datos de contacto.",
+      "Seguimiento de ventas y control de pagos pendientes.",
+      "Panel de administración intuitivo para la gestión diaria del emprendimiento."
     ],
-    stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "API Routes", "Supabase"],
-    enfoque: "Seguridad física, control de asistencia, QR dinámico, roles y reportes en tiempo real.",
+    stack: ["HTML", "CSS", "JavaScript", "Firebase", "SQL"],
+    enfoque: "Gestión de pedidos, organización de información y seguimiento de ventas.",
     category: "Gestión",
     status: "Completado",
-    repoUrl: "https://github.com/ricarromero/sistema-control-ingreso-qr-case-study",
+    repoUrl: "https://github.com/ricarromero",
     demoUrl: "placeholder",
     colorTheme: {
-      primary: "from-emerald-500 to-teal-600",
-      glow: "rgba(16, 185, 129, 0.15)",
-      border: "hover:border-emerald-500/50 dark:hover:border-emerald-400/40",
-      bgGrad: "dark:from-emerald-950/20 dark:to-slate-950"
+      primary: "from-cyan-500 to-blue-600",
+      glow: "rgba(6, 182, 212, 0.15)",
+      border: "hover:border-cyan-500/50 dark:hover:border-cyan-400/40",
+      bgGrad: "dark:from-cyan-950/20 dark:to-slate-950"
     }
   },
   {
     id: "whatsapp-appointment-bot",
-    name: "Turnos con Chatbot de WhatsApp",
-    description: "Sistema automatizado de agendamiento de turnos mediante un chatbot de WhatsApp y un panel de control privado para profesionales.",
-    longDescription: "Solución de automatización B2B para estudios profesionales. Permite a los clientes de un estudio agendar, reprogramar o cancelar turnos profesionales a través de WhatsApp de forma conversacional, impactando directamente en la base de datos.",
-    problem: "Pérdida de tiempo administrativo y alta tasa de inasistencias debido a procesos manuales de agendamiento y falta de recordatorios automáticos.",
-    solution: "Integración de la API de WhatsApp Cloud con un flujo de decisiones automatizado que consulta disponibilidad en tiempo real y envía recordatorios 24 horas antes del turno de manera desatendida.",
+    name: "Turnos con WhatsApp",
+    description: "Automatización de la gestión de turnos mediante WhatsApp. Sistema pensado para reducir la gestión manual de reservas, integrando un flujo conversacional con calendario y un panel privado de administración.",
+    longDescription: "Sistema de automatización de procesos para agendamiento de turnos. Integra la API de WhatsApp Cloud con flujos de trabajo desatendidos en n8n y un panel de control, permitiendo a los clientes reservar, modificar o cancelar citas automáticamente sin intervención manual.",
+    problem: "Alto volumen de consultas repetitivas por WhatsApp, interrupciones continuas en la labor diaria y cancelaciones de turnos por falta de recordatorios oportunos.",
+    solution: "Flujo automatizado con n8n y WhatsApp API que consulta disponibilidad en tiempo real, registra turnos en la base de datos y envía recordatorios automáticos.",
     features: [
-      "Chatbot conversacional inteligente con flujos automatizados de respuesta rápida.",
-      "Sincronización bidireccional inmediata con panel de turnos privado para los profesionales.",
-      "Sistema de envío automático de notificaciones y confirmaciones automáticas de reserva.",
-      "Base de datos persistente con historial de interacciones y bloqueo de turnos duplicados."
+      "Flujo conversacional automatizado para la reserva y gestión de turnos.",
+      "Integración mediante APIs entre n8n, WhatsApp, calendario y base de datos.",
+      "Envío automático de notificaciones y recordatorios de confirmación.",
+      "Panel de administración privado para visualizar y gestionar el calendario de turnos."
     ],
-    stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "API Routes", "Supabase", "WhatsApp Cloud API"],
-    enfoque: "Automatización de procesos, chatbots de mensajería, reserva de turnos y panel de control.",
+    stack: ["n8n", "APIs", "WhatsApp API", "Next.js", "React", "SQL", "Supabase"],
+    enfoque: "Automatización de procesos e integración de APIs.",
     category: "Automatización",
     status: "MVP Listo",
     repoUrl: "https://github.com/ricarromero/chatbot-turnos-whatsapp-case-study",
@@ -126,29 +100,81 @@ export const projects: Project[] = [
     }
   },
   {
-    id: "order-management-system",
-    name: "Sistema de Gestión de Pedidos",
-    description: "Creación de una aplicación web para la gestión de pedidos y seguimiento de ventas de un emprendimiento local de regalos personalizados.",
-    longDescription: "Un software a medida para pequeños negocios y emprendedores. Centraliza el ciclo de vida del pedido, desde la cotización y confirmación de pago con Firebase, hasta el diseño, manufactura, estadísticas de ventas en tiempo real e inventario final.",
-    problem: "Los cuadernos físicos y las planillas de cálculo sueltas generan confusión en los plazos de entrega y errores en las especificaciones de diseño personalizadas de cada regalo.",
-    solution: "Un dashboard minimalista e intuitivo que organiza los pedidos en un tablero Kanban de producción, con actualizaciones en tiempo real y alertas de vencimiento próximas.",
+    id: "incident-safe-tracker",
+    name: "Incident Safe Tracker",
+    description: "Sistema orientado a centralizar el registro y seguimiento de incidentes operacionales, facilitando la organización de información, trazabilidad y consulta de datos.",
+    longDescription: "Plataforma orientada al ámbito operativo e industrial para centralizar la notificación, auditoría y seguimiento de incidentes. Permite estructurar planes de acción correctiva y consultar información operacional de manera organizada.",
+    problem: "Registro desorganizado de incidentes operacionales, falta de trazabilidad en las medidas de corrección y dificultad para auditar datos históricos.",
+    solution: "Un sistema de información centralizado con base de datos estructurada, categorización de niveles de riesgo y generación de reportes para auditoría.",
     features: [
-      "Tablero Kanban interactivo para el control visual del estado de los pedidos.",
-      "Base de datos de clientes con histórico de compras, preferencias y saldos pendientes.",
-      "Buscador rápido con filtros avanzados por fecha de entrega, tipo de regalo o estado de pago.",
-      "Cuentas administrativas simples con maquetación y estilos CSS personalizados interactivos."
+      "Registro centralizado de incidentes operacionales con nivel de severidad.",
+      "Asignación y seguimiento de planes de acción correctiva.",
+      "Consultas estructuradas y visualización de métricas de frecuencia.",
+      "Scripts de procesamiento de datos en Python para análisis de información."
     ],
-    stack: ["HTML", "CSS", "JavaScript", "Firebase", "SQL"],
-    enfoque: "Gestión comercial interna, organización de manufactura, base de datos en tiempo real.",
-    category: "CSS",
-    status: "Completado",
-    repoUrl: "https://github.com/ricarromero",
+    stack: ["Python", "SQL", "Next.js", "React", "TypeScript", "Supabase"],
+    enfoque: "Organización de información, trazabilidad y datos.",
+    category: "Datos",
+    status: "MVP Listo",
+    repoUrl: "https://github.com/ricarromero/minesafe-tracker-case-study",
     demoUrl: "placeholder",
     colorTheme: {
-      primary: "from-cyan-500 to-blue-600",
-      glow: "rgba(6, 182, 212, 0.15)",
-      border: "hover:border-cyan-500/50 dark:hover:border-cyan-400/40",
-      bgGrad: "dark:from-cyan-950/20 dark:to-slate-950"
+      primary: "from-amber-500 to-orange-600",
+      glow: "rgba(245, 158, 11, 0.15)",
+      border: "hover:border-amber-500/50 dark:hover:border-amber-400/40",
+      bgGrad: "dark:from-amber-950/20 dark:to-slate-950"
+    }
+  },
+  {
+    id: "qr-ingress-control",
+    name: "Control de Ingreso QR",
+    description: "Sistema digital para gestionar el ingreso y egreso de personas mediante identificación QR, con registro centralizado y trazabilidad de movimientos.",
+    longDescription: "Sistema para la administración de accesos físicos en instalaciones institucionales o corporativas. Permite registrar en tiempo real entradas y salidas mediante códigos QR rotativos, manteniendo un historial auditable de movimientos.",
+    problem: "Controles manuales en papel propensos a errores, lentitud en el ingreso y falta de registros históricos confiables sobre la permanencia de personas.",
+    solution: "Aplicación web que valida credenciales QR en tiempo real contra la base de datos de Supabase, registrando automáticamente fecha, hora y estado de cada movimiento.",
+    features: [
+      "Validación de credenciales QR dinámicas para control de acceso.",
+      "Registro centralizado de ingresos y egresos en tiempo real.",
+      "Panel administrativo con perfiles para personal de seguridad y administración.",
+      "Generación de reportes de asistencia y trazabilidad de permanencia."
+    ],
+    stack: ["Next.js", "React", "TypeScript", "SQL", "Supabase", "APIs"],
+    enfoque: "Registro de información, automatización y trazabilidad.",
+    category: "Sistemas",
+    status: "Completado",
+    repoUrl: "https://github.com/ricarromero/sistema-control-ingreso-qr-case-study",
+    demoUrl: "placeholder",
+    colorTheme: {
+      primary: "from-emerald-500 to-teal-600",
+      glow: "rgba(16, 185, 129, 0.15)",
+      border: "hover:border-emerald-500/50 dark:hover:border-emerald-400/40",
+      bgGrad: "dark:from-emerald-950/20 dark:to-slate-950"
+    }
+  },
+  {
+    id: "smart-pdf-compressor",
+    name: "Smart PDF Compressor & OCR",
+    description: "Herramienta para automatizar el procesamiento y optimización de documentos digitalizados, reduciendo tareas manuales relacionadas con compresión y OCR.",
+    longDescription: "Utilidad web desarrollada para acelerar el procesamiento de documentación física escaneada. Automatiza la reducción de peso de archivos PDF y la extracción de texto mediante OCR directo en el navegador.",
+    problem: "Demoras manuales y restricciones de peso al subir expedientes digitalizados a sistemas administrativos, junto con la imposibilidad de buscar texto en documentos escaneados.",
+    solution: "Herramienta digital que procesa documentos localmente, ejecutando compresión de imágenes y reconocimiento de texto (OCR) de forma automatizada.",
+    features: [
+      "Compresión automatizada de imágenes en documentos PDF escaneados.",
+      "Reconocimiento óptico de caracteres (OCR) para hacer seleccionable el texto.",
+      "Procesamiento local sin envío de datos confidenciales a servidores externos.",
+      "Interfaz simple optimizada para flujos de trabajo administrativos."
+    ],
+    stack: ["HTML", "CSS", "JavaScript", "React", "Tesseract.js", "PDF.js"],
+    enfoque: "Procesamiento de documentos y automatización.",
+    category: "Automatización",
+    status: "Completado",
+    repoUrl: "https://github.com/ricarromero/Legal_PDF_Compressor_y_OCR",
+    demoUrl: "https://doclex.vercel.app/",
+    colorTheme: {
+      primary: "from-blue-500 to-indigo-600",
+      glow: "rgba(59, 130, 246, 0.15)",
+      border: "hover:border-blue-500/50 dark:hover:border-blue-400/40",
+      bgGrad: "dark:from-blue-950/20 dark:to-slate-950"
     }
   }
 ];

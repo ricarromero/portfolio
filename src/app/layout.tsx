@@ -16,27 +16,27 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Ricardo Romero | Junior Software Developer",
-  description: "Portfolio personal de Ricardo Romero, estudiante de Ciencias de la Computación de la Universidad Nacional de San Juan. Especializado en Next.js, React, TypeScript y automatizaciones de sistemas empresariales.",
+  title: "Ricardo Romero | Sistemas, Datos y Automatización",
+  description: "Portfolio de Ricardo Romero, estudiante avanzado de Ciencias de la Computación en la UNSJ. Proyectos de sistemas, datos, automatización y desarrollo de soluciones tecnológicas.",
   keywords: [
     "Ricardo Romero",
-    "Junior Software Developer",
-    "Next.js",
-    "React",
-    "TypeScript",
-    "San Juan",
-    "Argentina",
+    "Ciencias de la Computación",
+    "UNSJ",
+    "Sistemas de Información",
+    "SQL",
+    "Bases de datos",
     "Automatización",
-    "IA",
+    "n8n",
+    "APIs",
     "Python",
-    "HTML",
-    "CSS"
+    "Desarrollo de software",
+    "San Juan Argentina"
   ],
   authors: [{ name: "Ricardo Romero" }],
   creator: "Ricardo Romero",
   openGraph: {
-    title: "Ricardo Romero | Junior Software Developer",
-    description: "Sistemas web a medida, automatización e inteligencia aplicada a problemáticas reales.",
+    title: "Ricardo Romero | Sistemas, Datos y Automatización",
+    description: "Portfolio de Ricardo Romero, estudiante avanzado de Ciencias de la Computación en la UNSJ. Proyectos de sistemas, datos, automatización y soluciones tecnológicas.",
     url: "https://github.com/ricarromero",
     siteName: "Ricardo Romero Portfolio",
     locale: "es_AR",
@@ -44,8 +44,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ricardo Romero | Junior Software Developer",
-    description: "Sistemas web a medida y automatizaciones eficientes.",
+    title: "Ricardo Romero | Sistemas, Datos y Automatización",
+    description: "Estudiante avanzado de Ciencias de la Computación en la UNSJ. Sistemas, datos y automatización de procesos.",
   },
 };
 

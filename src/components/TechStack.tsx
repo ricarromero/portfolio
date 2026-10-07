@@ -16,12 +16,20 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Layers: Icons.Layers,
   FileJson: Icons.FileJson,
   Flame: Icons.Flame,
-  DatabaseBackup: Icons.Database, // Supabase icon alternative
+  DatabaseBackup: Icons.Database,
   Database: Icons.Database,
-  FileCode2: Icons.Terminal, // Python icon alternative
+  FileCode2: Icons.Terminal,
   Cpu: Icons.Cpu,
   GitBranch: Icons.GitBranch,
   Github: GithubIcon,
+  Workflow: Icons.Network || Icons.Cpu,
+  Settings: Icons.Settings,
+  Sparkles: Icons.Sparkles,
+  Bot: Icons.Bot,
+  Laptop: Icons.Laptop,
+  FileText: Icons.FileText,
+  MessageSquare: Icons.MessageSquare,
+  Layout: Icons.Layout,
 };
 
 const getHoverBorderColor = (tech: Technology) => {
@@ -31,7 +39,15 @@ const getHoverBorderColor = (tech: Technology) => {
   return tech.glowClass.replace(/0\.\d+\)$/, "0.85)");
 };
 
-const categories = ["Todos", "Frontend", "Backend", "Base de datos", "Lenguajes", "Herramientas"];
+const categories = [
+  "Todos",
+  "Bases de datos",
+  "Automatización e Integración",
+  "Lenguajes",
+  "Desarrollo",
+  "Herramientas",
+  "IA Aplicada"
+];
 
 export default function TechStack() {
   const [selectedCategory, setSelectedCategory] = useState("Todos");

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Mail, Send, CheckCircle2, AlertCircle, Phone } from "lucide-react";
+import { Mail, Send, CheckCircle2, AlertCircle, Phone, FileText } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "./BrandIcons";
 
 export default function Contact() {
@@ -14,7 +14,6 @@ export default function Contact() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    // Limpiar error al escribir
     if (errors[name]) {
       setErrors((prev) => {
         const next = { ...prev };
@@ -24,7 +23,6 @@ export default function Contact() {
     }
   };
 
-  // Validaciones del formulario
   const validateForm = () => {
     const tempErrors: Record<string, string> = {};
     if (!formData.name.trim()) tempErrors.name = "El nombre es obligatorio.";
@@ -40,7 +38,6 @@ export default function Contact() {
     return Object.keys(tempErrors).length === 0;
   };
 
-  // Envío real utilizando Web3Forms
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validateForm()) return;
@@ -99,100 +96,100 @@ export default function Contact() {
             Contacto
           </span>
           <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-foreground">
-            Hablemos de tu Próximo Proyecto
+            ¿Trabajamos juntos?
           </h2>
           <div className="h-1 bg-gradient-to-r from-primary-500 to-accent-500 mt-4 rounded-full w-[60px]" />
-          <p className="text-sm text-foreground/60 max-w-xl mt-4 leading-relaxed font-medium">
-            ¿Tenés alguna oportunidad laboral, idea de automatización o desarrollo web para tu negocio? Escribime y lo analizamos juntos.
+          <p className="text-sm text-foreground/70 max-w-2xl mt-4 leading-relaxed font-medium">
+            Estoy buscando oportunidades de pasantía o posiciones junior en IT donde pueda participar en proyectos reales, seguir desarrollándome profesionalmente y aportar desde mis conocimientos en sistemas, datos y automatización. Si querés contactarme por una oportunidad laboral o proyecto profesional, podés escribirme.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start max-w-5xl mx-auto">
-          {/* Lado Izquierdo: Información Directa (Col 5) */}
+          {/* Lado Izquierdo: Información Directa */}
           <div className="lg:col-span-5 flex flex-col gap-6">
-            {/* Tarjeta de Información General */}
             <motion.div
               initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="p-6 rounded-3xl glass border border-card-border/75 shadow-lg flex flex-col justify-between"
             >
-              <h3 className="text-lg font-bold text-foreground mb-4">Información de Contacto</h3>
+              <h3 className="text-lg font-bold text-foreground mb-4">Canales de Contacto</h3>
               
-              <div className="space-y-4">
-                {/* Email Directo */}
+              <div className="space-y-3.5">
+                {/* 1. LinkedIn */}
                 <a
-                  href="mailto:ricardooromero15@gmail.com"
-                  className="flex items-center gap-3.5 p-3.5 rounded-2xl bg-card-bg/40 border border-card-border/60 hover:border-primary-500/30 hover:bg-primary-500/3 transition-all duration-300 group cursor-pointer"
+                  href="https://linkedin.com/in/ricardo-octavio-romero-896860263"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3.5 p-3.5 rounded-2xl bg-card-bg/40 border border-card-border/60 hover:border-primary-500/30 hover:bg-primary-500/5 transition-all duration-300 group cursor-pointer"
                 >
                   <span className="w-9 h-9 rounded-xl bg-primary-500/10 flex items-center justify-center text-primary-500 group-hover:scale-105 transition-transform">
-                    <Mail className="w-4.5 h-4.5" />
+                    <LinkedinIcon className="w-4.5 h-4.5" />
                   </span>
                   <div>
-                    <span className="text-[10px] uppercase font-bold text-foreground/40 block">Email Personal</span>
+                    <span className="text-[10px] uppercase font-bold text-foreground/40 block">LinkedIn</span>
                     <span className="text-xs sm:text-sm font-bold text-foreground/80 group-hover:text-primary-500 dark:group-hover:text-white transition-colors">
-                      ricardooromero15@gmail.com
+                      linkedin.com/in/ricardo-octavio-romero
                     </span>
                   </div>
                 </a>
 
-                {/* GitHub Directo */}
+                {/* 2. GitHub */}
                 <a
                   href="https://github.com/ricarromero"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3.5 p-3.5 rounded-2xl bg-card-bg/40 border border-card-border/60 hover:border-primary-500/30 hover:bg-primary-500/3 transition-all duration-300 group cursor-pointer"
+                  className="flex items-center gap-3.5 p-3.5 rounded-2xl bg-card-bg/40 border border-card-border/60 hover:border-primary-500/30 hover:bg-primary-500/5 transition-all duration-300 group cursor-pointer"
                 >
                   <span className="w-9 h-9 rounded-xl bg-primary-500/10 flex items-center justify-center text-primary-500 group-hover:scale-105 transition-transform">
                     <GithubIcon className="w-4.5 h-4.5" />
                   </span>
                   <div>
-                    <span className="text-[10px] uppercase font-bold text-foreground/40 block">GitHub Oficial</span>
+                    <span className="text-[10px] uppercase font-bold text-foreground/40 block">GitHub</span>
                     <span className="text-xs sm:text-sm font-bold text-foreground/80 group-hover:text-primary-500 dark:group-hover:text-white transition-colors">
                       github.com/ricarromero
                     </span>
                   </div>
                 </a>
 
-                 {/* Teléfono y WhatsApp */}
+                {/* 3. Email */}
                 <a
-                  href="https://wa.me/5492645890535"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3.5 p-3.5 rounded-2xl bg-card-bg/40 border border-card-border/60 hover:border-primary-500/30 hover:bg-primary-500/3 transition-all duration-300 group cursor-pointer"
+                  href="mailto:ricardooromero15@gmail.com"
+                  className="flex items-center gap-3.5 p-3.5 rounded-2xl bg-card-bg/40 border border-card-border/60 hover:border-primary-500/30 hover:bg-primary-500/5 transition-all duration-300 group cursor-pointer"
                 >
                   <span className="w-9 h-9 rounded-xl bg-primary-500/10 flex items-center justify-center text-primary-500 group-hover:scale-105 transition-transform">
-                    <Phone className="w-4.5 h-4.5" />
+                    <Mail className="w-4.5 h-4.5" />
                   </span>
                   <div>
-                    <span className="text-[10px] uppercase font-bold text-foreground/40 block">Teléfono / WhatsApp</span>
+                    <span className="text-[10px] uppercase font-bold text-foreground/40 block">Email</span>
                     <span className="text-xs sm:text-sm font-bold text-foreground/80 group-hover:text-primary-500 dark:group-hover:text-white transition-colors">
-                      +54 264 5890535
+                      ricardooromero15@gmail.com
                     </span>
                   </div>
                 </a>
 
-                {/* LinkedIn Directo */}
+                {/* 4. Descargar CV */}
                 <a
-                  href="https://linkedin.com/in/ricardo-octavio-romero-896860263"
+                  href="/CV_Ricardo_Romero.pdf"
+                  download="CV_Ricardo_Romero.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3.5 p-3.5 rounded-2xl bg-card-bg/40 border border-card-border/60 hover:border-primary-500/30 hover:bg-primary-500/3 transition-all duration-300 group cursor-pointer"
+                  className="flex items-center gap-3.5 p-3.5 rounded-2xl bg-card-bg/40 border border-card-border/60 hover:border-primary-500/30 hover:bg-primary-500/5 transition-all duration-300 group cursor-pointer"
                 >
                   <span className="w-9 h-9 rounded-xl bg-primary-500/10 flex items-center justify-center text-primary-500 group-hover:scale-105 transition-transform">
-                    <LinkedinIcon className="w-4.5 h-4.5" />
+                    <FileText className="w-4.5 h-4.5" />
                   </span>
                   <div>
-                    <span className="text-[10px] uppercase font-bold text-foreground/40 block">LinkedIn Profesional</span>
+                    <span className="text-[10px] uppercase font-bold text-foreground/40 block">Currículum Vitae</span>
                     <span className="text-xs sm:text-sm font-bold text-foreground/80 group-hover:text-primary-500 dark:group-hover:text-white transition-colors">
-                      linkedin.com/in/ricardo-octavio-romero
+                      Descargar CV (PDF)
                     </span>
                   </div>
                 </a>
               </div>
             </motion.div>
 
-            {/* Tarjeta de recordatorio / ubicación */}
+            {/* Tarjeta de Ubicación */}
             <motion.div
               initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -202,7 +199,7 @@ export default function Contact() {
             >
               <h3 className="text-sm font-bold text-foreground mb-1.5">Ubicación y Disponibilidad</h3>
               <p className="text-xs text-foreground/65 leading-relaxed font-medium">
-                San Juan, Argentina. Disponible para trabajar de forma remota para cualquier parte del mundo o de forma híbrida/presencial local.
+                San Juan, Argentina. Disponible para posiciones remotas, híbridas o presenciales.
               </p>
             </motion.div>
           </div>

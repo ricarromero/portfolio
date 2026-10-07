@@ -37,9 +37,9 @@ export default function Preloader({ onComplete }: PreloaderProps) {
         if (next < 25) {
           setLogText("ricardooromero@sys:~$ loading_system_core");
         } else if (next >= 25 && next < 50) {
-          setLogText("LOADING_MODULES: [Next.js_AppRouter, Tailwind_v4, TS]");
+          setLogText("LOADING_MODULES: [Sistemas, Datos, Automatización]");
         } else if (next >= 50 && next < 75) {
-          setLogText("CONNECTING_DATABASE: [Supabase_OK, Firebase_OK]");
+          setLogText("CONNECTING_DATABASE: [PostgreSQL, Supabase, Firebase]");
         } else if (next >= 75 && next < 95) {
           setLogText("INITIALIZING_UI: [DarkTheme_Active, FramerMotion_Loaded]");
         } else if (next >= 95 && next < 100) {

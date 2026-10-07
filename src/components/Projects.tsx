@@ -6,7 +6,7 @@ import { projects, Project } from "../data/projects";
 import ProjectCard from "./ProjectCard";
 import ProjectModal from "./ProjectModal";
 
-const categories: Project["category"][] = ["Todos", "Python", "HTML", "CSS", "Automatización", "Gestión", "Frontend"];
+const categories: Project["category"][] = ["Todos", "Sistemas", "Datos", "Automatización", "Gestión"];
 
 export default function Projects() {
   const [selectedCategory, setSelectedCategory] = useState<Project["category"]>("Todos");

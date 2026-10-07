@@ -7,24 +7,20 @@ import { Play, RotateCcw, FileCode, CheckCircle, Terminal } from "lucide-react";
 const codePython = `def obtener_perfil():
     return {
         "nombre": "Ricardo Romero",
-        "carrera": "Lic. Ciencias Computación",
-        "anio": "4.º Año - UNSJ",
-        "enfoque": "Resolver problemas reales",
-        "especialidad": "Automatización & IA"
+        "carrera": "Lic. Ciencias de la Computación",
+        "año": "4.º Año - UNSJ",
+        "enfoque": "Sistemas, datos y automatización",
+        "objetivo": "Resolver problemas reales"
     }
 
 print(obtener_perfil())`;
 
 const codeJSON = `{
-  "personal": {
-    "nombre": "Ricardo Octavio Romero",
-    "ubicacion": "San Juan, Argentina",
-    "ingles": "A2/B1 - Técnico"
-  },
-  "preferencias": {
-    "modo": "Híbrido / Remoto",
-    "pasion": "Automatizar procesos manuales"
-  }
+  "nombre": "Ricardo Romero",
+  "carrera": "Lic. Ciencias de la Computación",
+  "año": "4.º Año - UNSJ",
+  "enfoque": "Sistemas, datos y automatización",
+  "objetivo": "Resolver problemas reales"
 }`;
 
 export default function InteractiveTerminal() {

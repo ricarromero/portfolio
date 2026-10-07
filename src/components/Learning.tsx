@@ -1,17 +1,18 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { BookOpen, GraduationCap, Star, ArrowRight, ShieldCheck, Flame, GitMerge, Settings } from "lucide-react";
+import { Database, Layers, Settings, Globe, Cpu, Terminal, Sparkles, FileText, BarChart3 } from "lucide-react";
 
 const learningTopics = [
-  { text: "Buenas prácticas en TypeScript", icon: ShieldCheck, color: "text-blue-500 bg-blue-500/10" },
-  { text: "Arquitectura con Next.js (App Router)", icon: GraduationCap, color: "text-white bg-neutral-900 dark:bg-neutral-800" },
-  { text: "Integración avanzada de APIs", icon: GitMerge, color: "text-violet-500 bg-violet-500/10" },
-  { text: "Servicios Backend Supabase & Firebase", icon: Flame, color: "text-emerald-500 bg-emerald-500/10" },
-  { text: "Automatizaciones con Agentes de IA", icon: BookOpen, color: "text-cyan-500 bg-cyan-500/10" },
-  { text: "Despliegue y Serverless Web", icon: Settings, color: "text-amber-500 bg-amber-500/10" },
-  { text: "Optimización de Experiencia de Usuario", icon: Star, color: "text-pink-500 bg-pink-500/10" },
-  { text: "Documentación Profesional de Software", icon: ArrowRight, color: "text-teal-500 bg-teal-500/10" }
+  { text: "SQL y modelado de bases de datos", icon: Database, color: "text-blue-500 bg-blue-500/10" },
+  { text: "Sistemas de información", icon: Layers, color: "text-indigo-500 bg-indigo-500/10" },
+  { text: "Automatización de procesos", icon: Settings, color: "text-violet-500 bg-violet-500/10" },
+  { text: "Integración de APIs", icon: Globe, color: "text-emerald-500 bg-emerald-500/10" },
+  { text: "n8n", icon: Cpu, color: "text-rose-500 bg-rose-500/10" },
+  { text: "Python aplicado a soluciones", icon: Terminal, color: "text-yellow-500 bg-yellow-500/10" },
+  { text: "Herramientas de IA generativa", icon: Sparkles, color: "text-teal-500 bg-teal-500/10" },
+  { text: "Diseño y documentación de sistemas", icon: FileText, color: "text-cyan-500 bg-cyan-500/10" },
+  { text: "Análisis y organización de información", icon: BarChart3, color: "text-purple-500 bg-purple-500/10" }
 ];
 
 // Duplicamos los elementos para lograr un marquee infinito perfecto sin saltos visuales
@@ -27,7 +28,7 @@ export default function Learning() {
             Aprendizaje Activo
           </span>
           <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight text-foreground">
-            Actualmente Capacitándome En
+            Actualmente profundizando en
           </h2>
           <div className="h-1 bg-gradient-to-r from-primary-500 to-accent-500 mt-3 rounded-full w-[40px]" />
         </div>

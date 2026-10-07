@@ -1,46 +1,36 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ArrowDown, Mail, FileText, ArrowRight, Activity, Code, Globe, Shield } from "lucide-react";
+import { ArrowDown, Mail, FileText, ArrowRight, Activity, Code, Globe, Shield, Database } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { GithubIcon, LinkedinIcon } from "./BrandIcons";
 
-const words = [
-  "Next.js",
-  "React",
-  "TypeScript",
-  "Automatización",
-  "Python",
-  "HTML",
-  "CSS"
-];
-
 const cardsData = [
   {
-    icon: Code,
-    title: "Proyectos Reales",
-    desc: "Sistemas implementados con código robusto y funcional.",
+    icon: Database,
+    title: "01 — SISTEMAS Y DATOS",
+    desc: "Organización de información, bases de datos relacionales y diseño de sistemas orientados a necesidades concretas.",
     color: "text-amber-500 bg-amber-500/10",
     delay: 0.8
   },
   {
-    icon: Globe,
-    title: "Desarrollo Web",
-    desc: "Interfaces premium adaptables, rápidas e intuitivas.",
-    color: "text-blue-500 bg-blue-500/10",
+    icon: Activity,
+    title: "02 — AUTOMATIZACIÓN",
+    desc: "Automatización de procesos e integración entre herramientas mediante APIs y flujos de trabajo.",
+    color: "text-violet-500 bg-violet-500/10",
     delay: 0.9
   },
   {
-    icon: Activity,
-    title: "Automatización & IA",
-    desc: "Optimización de procesos manuales y flujos inteligentes.",
-    color: "text-violet-500 bg-violet-500/10",
+    icon: Code,
+    title: "03 — DESARROLLO",
+    desc: "Desarrollo de aplicaciones web y herramientas digitales orientadas a resolver problemas concretos.",
+    color: "text-blue-500 bg-blue-500/10",
     delay: 1.0
   },
   {
     icon: Shield,
-    title: "Problemas Reales",
-    desc: "Código robusto y estructurado con Python, HTML y CSS.",
+    title: "04 — TECNOLOGÍA APLICADA",
+    desc: "Uso de herramientas tecnológicas e inteligencia artificial generativa como apoyo para desarrollar e implementar soluciones.",
     color: "text-emerald-500 bg-emerald-500/10",
     delay: 1.1
   }
@@ -70,16 +60,6 @@ const staticDots = [
 ];
 
 export default function Hero() {
-  const [index, setIndex] = useState(0);
-
-  // Efecto de cambio de palabras rotativas
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prevIndex) => (prevIndex + 1) % words.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <section
       id="inicio"
@@ -116,57 +96,58 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10 w-full">
         {/* Contenido Principal (Col 7) */}
         <div className="lg:col-span-7 flex flex-col text-left">
+          {/* Badge Subtítulo */}
+          <motion.span
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-xs uppercase font-extrabold tracking-widest text-primary-500 bg-primary-500/10 px-3 py-1 rounded-full mb-3 w-fit"
+          >
+            UNSJ · 4.º año
+          </motion.span>
+
           {/* Nombre con Glow */}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-5xl md:text-7xl font-extrabold tracking-tight mb-2 select-none relative"
+            className="text-4xl md:text-6xl font-extrabold tracking-tight mb-3 select-none relative"
           >
             <span className="relative z-10">Ricardo Octavio Romero</span>
             <span className="absolute -inset-x-2 inset-y-0 bg-primary-500/10 dark:bg-primary-500/5 blur-3xl rounded-full z-0 pointer-events-none" />
           </motion.h1>
 
-          {/* Subtítulo Dinámico */}
+          {/* Subtítulo Principal */}
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-2xl md:text-3xl font-bold mb-4 flex flex-wrap items-center gap-x-2"
+            className="text-xl md:text-2xl font-bold mb-5 text-primary-600 dark:text-primary-400 leading-snug"
           >
-            <span className="text-foreground/90 font-medium">Junior Software Developer |</span>
-            <div className="inline-flex overflow-hidden h-[40px] items-center relative min-w-[240px]">
-              <AnimatePresence mode="wait">
-                <motion.span
-                  key={index}
-                  initial={{ y: 25, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  exit={{ y: -25, opacity: 0 }}
-                  transition={{ duration: 0.4, ease: "easeInOut" }}
-                  className="absolute text-gradient font-extrabold"
-                >
-                  {words[index]}
-                </motion.span>
-              </AnimatePresence>
-            </div>
+            Estudiante avanzado de Ciencias de la Computación | Sistemas, Datos y Automatización
           </motion.h2>
 
           {/* Descripción */}
-          <motion.p
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-base md:text-lg text-foreground/70 max-w-xl mb-8 leading-relaxed font-medium"
+            className="text-base text-foreground/75 max-w-xl mb-8 leading-relaxed font-medium space-y-3"
           >
-            Estudiante de Ciencias de la Computación enfocado en crear soluciones digitales modernas para empresas, automatizaciones inteligentes y sistemas web listos para resolver problemáticas del mundo real.
-          </motion.p>
+            <p>
+              Estudiante avanzado de Ciencias de la Computación en la UNSJ, orientado al desarrollo de sistemas, gestión de información y automatización de procesos.
+            </p>
+            <p className="text-foreground/65 text-sm">
+              Me interesa transformar necesidades reales de organizaciones en soluciones tecnológicas simples, útiles y escalables, combinando datos, software, APIs y herramientas de automatización.
+            </p>
+          </motion.div>
 
-          {/* Botones de Acción */}
+          {/* Botones de Acción Priorizados */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="flex flex-wrap gap-4 items-center mb-10"
+            className="flex flex-wrap gap-3.5 items-center mb-10"
           >
             <a
               href="#proyectos"
@@ -175,23 +156,23 @@ export default function Hero() {
               Ver proyectos
               <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
             </a>
-            
-            <a
-              href="#contacto"
-              className="px-6 py-3.5 rounded-xl bg-card-bg border border-card-border hover:border-primary-500/50 text-foreground font-bold text-sm transition-all duration-300 cursor-pointer"
-            >
-              Contactarme
-            </a>
 
             <a
               href="/CV_Ricardo_Romero.pdf"
               download="CV_Ricardo_Romero.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 px-6 py-3.5 rounded-xl bg-transparent border border-dashed border-card-border hover:border-accent-500/50 text-foreground/80 hover:text-foreground font-semibold text-sm transition-all duration-300 cursor-pointer"
+              className="flex items-center gap-1.5 px-6 py-3.5 rounded-xl bg-card-bg border border-card-border hover:border-primary-500/50 text-foreground font-bold text-sm transition-all duration-300 cursor-pointer shadow-sm"
             >
               <FileText className="w-4 h-4" />
               Descargar CV
+            </a>
+
+            <a
+              href="#contacto"
+              className="px-6 py-3.5 rounded-xl bg-transparent border border-dashed border-card-border hover:border-accent-500/50 text-foreground/80 hover:text-foreground font-semibold text-sm transition-all duration-300 cursor-pointer"
+            >
+              Contactarme
             </a>
           </motion.div>
 
